@@ -1,0 +1,26 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Simple Hello World Service
+  description: A basic HTTP service that responds to a GET /hello request with a JSON object.
+
+servers:
+  - url: http://localhost:8888  # Change to your actual URL if needed
+
+paths:
+  /hello:
+    get:
+      summary: Get Hello World message
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Hello:
+                    type: string
+                    example: world
+        404:
+          description: Not Found
